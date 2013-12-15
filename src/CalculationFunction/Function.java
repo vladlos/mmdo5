@@ -74,8 +74,7 @@ public class Function {
     }
 
     public static void main(String[] args) {
-        Function function = new Function("100*pow(x1-x0^2,2)+pow(1-x0,2)");
-        System.out.println(function.getFunct());
-        System.out.println(function.calculate(new double[]{1, 1}));
+        Function function = new Function("6*pow(x,5)-12*x+4");
+        System.out.println(function.calculate(2));
     }
 }

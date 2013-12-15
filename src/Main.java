@@ -15,22 +15,22 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Function function = new Function("sin(x)+sin(2*x)");
-        Function grad = new Function("cos(x)/x - sin(x)/(pow(x,2))");
+        Function function = new Function("pow(x,6) - 6*pow(x,2)+4*x-1");
+        Function grad = new Function("6*pow(x,5)-12*x+4");
 
         GlobalMinimum[] methods = new GlobalMinimum[] {
-                new EvenBust(function),
+                //new EvenBust(function),
                 new ConsistentBust(function),
-                new PiyavskyiLine(function),
+                //new PiyavskyiLine(function),
                 //new PiyavskyiParabola(function, grad)
         };
 
         for (GlobalMinimum minimum : methods) {
-            test(minimum, 0, 6, 1E-2, 0.5);
+            test(minimum, -2, 2, 1E-2, 172);
         }
 
         for (GlobalMinimum minimum : methods) {
-            test(minimum, 2, 13, 1E-4, 0.5);
+            test(minimum, -2, 2, 1E-4, 172);
         }
     }
 }
